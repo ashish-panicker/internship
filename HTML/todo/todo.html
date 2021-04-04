@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do's</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="./styles/site.css">
+</head>
+<body>
+    
+
+    <div class="container">
+
+        <div class="row">
+
+            <div class="col-12 text-center">
+
+                <div class="form-group">
+                  <label for="todo"></label>
+                  <input type="text"
+                    class="form-control form-control-lg" name="todo" id="todo" placeholder="Your To Do">
+                  
+                </div>
+
+                <div class="form-group pt-3">
+                    <button type="button" class="btn btn-lg btn-custom" id="btnTodo">Create</button>
+                </div>
+                
+
+            </div>
+        </div>
+
+        <div class="row">
+
+            <div class="col-12">
+
+                <p class="display-4">Your ToDo's</p>
+
+                <ol class="list-group ">
+
+                    <li class="list-group-item d-flex justify-content-between align-items-start">
+                        <div class="ms-2 me-auto">
+                            <div >
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. A suscipit earum expedita soluta magni, assumenda explicabo, provident eius ducimus praesentium, incidunt facere! Explicabo corporis quam incidunt id adipisci consequuntur vitae.
+                            </div>
+                        </div>
+                        <button type="button" class="btn btn-sm btn-custom">Done</button>
+                    </li>
+                    
+                </ol>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script src="scripts/script.js"></script>
+</body>
+</html>

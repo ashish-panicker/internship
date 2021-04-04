@@ -1,10 +1,22 @@
+import java.util.Scanner;
 import java.util.stream.Stream;
 
 public class ControlStatement {
 
     public static void main(String[] args) {
-        ControlStatement cs = new ControlStatement();
-        cs.arrays();
+        // ControlStatement cs = new ControlStatement();
+        // cs.arrays();
+
+        // not works with IDE
+        String userName = System.console().readLine();
+
+        String password = String.valueOf(System.console().readPassword());
+
+        System.out.printf("Username %s Password %s\n", userName, password);
+
+        int val = Integer.parseInt(new Scanner(System.in).nextLine().trim());
+
+        System.out.println(val);
 
     }
 
@@ -12,7 +24,6 @@ public class ControlStatement {
         String[] names = { "Java", "Javscript", "jQuery", "PLSQL" };
 
         System.out.println(names.length);
-
         for (int i = 0; i < names.length; i++) {
             System.out.printf("%s ", names[i]);
         }
