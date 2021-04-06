@@ -60,6 +60,11 @@ public class CollectionsDemo {
         for (Intern intern : internsList) {
             System.out.println(intern);
         }
+
+        // Using lamdas and Streams
+        System.out.println("\n After sorting using name by Lambda Expression..");
+        internsList.sort((Intern i1, Intern i2) -> i1.getName().compareTo(i2.getName()));
+        internsList.forEach(System.out::println);
     }
 
     public void sortArrayList() {
