@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://www.springframework.org/schema/beans 
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+    <bean id="red" class="com.spring.demo.shapes.Color">
+        <property name="paint" value="RED" />
+    </bean>
+
+    <bean id="blue" class="com.spring.demo.shapes.Color" name="blueColorBean">
+        <property name="paint" value="BLUE" />
+    </bean>
+
+    <bean id="circle" class="com.spring.demo.shapes.Circle">
+        <property name="color" ref="red" />
+    </bean>
+
+    <bean id="triangle" class="com.spring.demo.shapes.Triangle">
+        <property name="color" ref="blue" />
+    </bean>
+
+    <bean id="triangleCanvas" class="com.spring.demo.shapes.Drawing" init-method="initialize" destroy-method="destroy">
+        <constructor-arg ref="triangle" />
+        <constructor-arg ref="red" />
+    </bean>
+</beans>
