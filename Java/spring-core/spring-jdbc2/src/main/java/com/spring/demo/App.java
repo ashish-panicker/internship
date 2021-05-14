@@ -1,5 +1,8 @@
 package com.spring.demo;
 
+import java.io.FileReader;
+import java.util.Properties;
+
 import com.spring.demo.config.AppConfig;
 import com.spring.demo.dao.CourseDao;
 import com.spring.demo.dao.TrainerDao;
@@ -37,5 +40,6 @@ public class App {
         System.out.println("Trainers\n" + trainerDao.findAll());
 
         System.out.println("Course \n" + courseDao.findAll() );
+        
     }
 }
