@@ -12,5 +12,7 @@ public class Book {
     private String title;
 
     private LocalDate publishedDate;
+
+    // book.bookId.isbn = ? and book.bookId.author = ?
     
 }

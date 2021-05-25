@@ -1,0 +1,21 @@
+POST http://localhost:9000/book-jpa/books HTTP/1.1
+Content-Type: application/json
+
+{
+    "firstName":"George",
+    "lastName":"Orwell",
+    "title":"Animal Farm"
+}
+###
+
+GET http://localhost:9000/book-jpa/books HTTP/1.1
+###
+
+GET http://localhost:9000/book-jpa/books/2 HTTP/1.1
+###
+
+GET http://localhost:9000/book-jpa/books/author/George HTTP/1.1
+###
+
+GET http://localhost:9000/book-jpa/books/title/1984 HTTP/1.1
+###
