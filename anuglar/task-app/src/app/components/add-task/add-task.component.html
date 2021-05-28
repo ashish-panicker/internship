@@ -1,0 +1,15 @@
+<form class="add-form">
+    <div class="form-control">
+        <label for="text">Task</label> {{text}}
+        <input type="text" name="text" id="text" [(ngModel)]="text" placeholder="Add Task">
+    </div>
+    <div class="form-control">
+        <label for="day">Day</label>{{day}}
+        <input type="text" name="day" id="day" [(ngModel)]="day" placeholder="Add Day">
+    </div>
+    <div class="form-control">
+        <label for="reminder">Set Reminder</label>{{reminder}}
+        <input type="checkbox" name="reminder" [(ngModel)]="reminder" id="reminder" >
+    </div>
+    <button type="submit" class="btn">Create Task</button>
+</form>

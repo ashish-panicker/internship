@@ -1,0 +1,7 @@
+
+<app-task-item 
+    *ngFor="let task of tasks" 
+    [task]="task"
+    (onToggleReminder)="toggleReminder(task)"></app-task-item>
+
+<div *ngIf="tasks.length == 0">No Tasks</div>
