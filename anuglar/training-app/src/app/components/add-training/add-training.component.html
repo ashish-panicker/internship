@@ -1,0 +1,80 @@
+<div class="row">
+    <div class="col-md-6">
+        <h2>Create a new training</h2>
+        <form [formGroup]="trainingForm" novalidate (ngSubmit)="onSubmit()">
+            <div class="form-group">
+                <label for="title">Title</label>
+                <input type="text" name="title" id="title" class="form-control" placeholder="Course title"
+                    formControlName="title" [ngClass]="{
+                        'is-invalid': trainingForm.controls['title'].invalid && (trainingForm.controls['title'].dirty || trainingForm.controls['title'].touched),'is-valid': trainingForm.controls['title'].valid
+                    }">
+                <div class="invalid-feedback"
+                    *ngIf="trainingForm.controls['title'].invalid && (trainingForm.controls['title'].dirty || trainingForm.controls['title'].touched)">
+                    Make sure title is not empty and has atleast 3 chars. Current length
+                    {{trainingForm.controls['title'].value.length}}
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="description">Description</label>
+                <textarea name="description" id="description" class="form-control" formControlName="description"
+                    [ngClass]="{
+                        'is-invalid': trainingForm.controls['description'].invalid && (trainingForm.controls['description'].dirty || trainingForm.controls['description'].touched),
+                        'is-valid': trainingForm.controls['description'].valid
+                    }"></textarea>
+                <div class="invalid-feedback"
+                    *ngIf="trainingForm.controls['description'].invalid && (trainingForm.controls['description'].dirty || trainingForm.controls['description'].touched)">
+                    Make sure desciption is not empty and has atleast 10 chars. Current length
+                    {{trainingForm.controls['description'].value.length}}
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="email">POC Email</label>
+                <input type="email" name="email" id="email" class="form-control" placeholder="Course POC email"
+                    formControlName="email" 
+                    [ngClass]="{
+                        'is-invalid': trainingForm.controls['email'].invalid && (trainingForm.controls['email'].dirty || trainingForm.controls['email'].touched),'is-valid': trainingForm.controls['email'].valid
+                    }">
+                <div class="invalid-feedback"
+                    *ngIf="trainingForm.controls['email'].invalid && (trainingForm.controls['email'].dirty || trainingForm.controls['email'].touched)">
+                    Make sure email is not empty and is in proper format.
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="startDate">Course Start Date</label>
+                <input type="date" name="startDate" id="startDate" class="form-control" placeholder="Course Start Date"
+                    formControlName="startDate" 
+                    [ngClass]="{
+                        'is-invalid': trainingForm.controls['startDate'].invalid && (trainingForm.controls['startDate'].dirty || trainingForm.controls['startDate'].touched),'is-valid': trainingForm.controls['startDate'].valid
+                    }">
+                <div class="invalid-feedback"
+                    *ngIf="trainingForm.controls['startDate'].invalid && (trainingForm.controls['startDate'].dirty || trainingForm.controls['startDate'].touched)">
+                    Make sure start date  is not empty.
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="endDate">Course End Date</label>
+                <input type="date" name="endDate" id="endDate" class="form-control" placeholder="Course Start Date"
+                    formControlName="endDate" 
+                    [ngClass]="{
+                        'is-invalid': trainingForm.controls['endDate'].invalid && (trainingForm.controls['endDate'].dirty || trainingForm.controls['endDate'].touched),
+                        'is-valid': trainingForm.controls['endDate'].valid
+                    }">
+                <div class="invalid-feedback"
+                    *ngIf="trainingForm.controls['endDate'].invalid && (trainingForm.controls['startDate'].dirty || trainingForm.controls['endDate'].touched)">
+                    Make sure end date  is not empty.
+                </div>
+            </div>
+
+            <button type="submit" 
+                [ngClass]="{
+                    'btn btn-primary':!(trainingForm.pristine || trainingForm.invalid),
+                    'btn btn-secondary':(trainingForm.pristine || trainingForm.invalid)
+                }"
+                [disabled]="trainingForm.pristine || trainingForm.invalid" >Create Training</button>
+        </form>
+    </div>
+</div>
