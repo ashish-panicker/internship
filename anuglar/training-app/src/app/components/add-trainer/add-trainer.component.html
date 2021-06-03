@@ -1,0 +1,46 @@
+<div class="row">
+    <div class="col-md-8">
+        <h2>Trainer Form</h2>
+
+        <form [formGroup]="trainerForm" (ngSubmit)="trainerFormSubmit()">
+            <div class="form-group">
+                <label for="trainerName">Trainer Name</label>
+                <input type="text" class="form-control" name="trainerName" id="trainerName"
+                    formControlName="trainerName" aria-describedby="helpId" placeholder="Name of the trainer.">
+
+                <div class="text-danger small" 
+                        *ngIf="trainerForm.controls['trainerName'].invalid 
+                        && (trainerForm.controls['trainerName'].dirty || trainerForm.controls['trainerName'].touched)">
+                    Trainer name must be provided and should be atleast 3 chars long.
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="trainerEmail">Trainer Email</label>
+                <input type="email" class="form-control" name="trainerEmail" id="trainerEmail"
+                    formControlName="trainerEmail" aria-describedby="emailHelpId" placeholder="Trainer Email.">
+
+                <div class="text-danger small" 
+                        *ngIf="trainerForm.controls['trainerEmail'].invalid 
+                        && (trainerForm.controls['trainerEmail'].dirty || trainerForm.controls['trainerEmail'].touched)">
+                    Trainer email must be provided and should be a valid email.
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="track">Track</label>
+                <input type="text" class="form-control" name="track" id="track" formControlName="track"
+                    aria-describedby="helpId" placeholder="Track">
+
+                <div class="text-danger small" 
+                        *ngIf="trainerForm.controls['track'].invalid 
+                        && (trainerForm.controls['track'].dirty || trainerForm.controls['track'].touched)">
+                    Track of the trainer must be specified and it should be atleast 3 chars long.
+                </div>
+            </div>
+
+            <button type="submit" [disabled]="trainerForm.pristine || trainerForm.invalid"
+                class="btn btn-primary">Create Trainer</button>
+        </form>
+    </div>
+</div>

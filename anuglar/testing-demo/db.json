@@ -1,0 +1,16 @@
+{
+    "trainees": [
+        {
+            "id": 1,
+            "name": "Ashish",
+            "email": "ashish@gmail.com"
+        }
+    ],
+    "topics": [
+        {
+            "id": 1,
+            "title": "Java Collections",
+            "module": "Java"
+        }
+    ]
+}

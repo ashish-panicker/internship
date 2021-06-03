@@ -1,0 +1,14 @@
+POST http://localhost:9100/trainer-api/trainers HTTP/1.1
+Content-Type: application/json
+
+{
+    "trainerName":"Ashish S",
+    "trainerEmail":"ashish.s@cognizant.com",
+    "track":"Java FSE",
+    "specializations":[
+        "Java", "Spring REST", "Spring Boot", "Spring Cloud", "AWS", "Angular"
+    ]
+}
+###
+
+

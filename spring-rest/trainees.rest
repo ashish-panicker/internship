@@ -1,0 +1,30 @@
+
+GET http://localhost:9999/trainees/4 HTTP/1.1
+###
+
+GET http://localhost:9999/trainees/ HTTP/1.1
+###
+
+POST http://localhost:9999/trainees/ HTTP/1.1
+Content-Type: application/json
+
+{
+    "id": "5",
+    "email": "amrita.r",
+    "name": "Amrita R",
+    "serviceLine": "CDE"
+}
+###
+DELETE http://localhost:9999/trainees/5 HTTP/1.1
+###
+
+PUT http://localhost:9999/trainees/5 HTTP/1.1
+Content-Type: application/json
+
+{
+    "id": "5",
+    "email": "amrita.r",
+    "name": "Amrita R K",
+    "serviceLine": "CDE"
+}
+###

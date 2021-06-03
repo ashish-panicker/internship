@@ -6,6 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-
-  // title:string="Training application";
+  count:number = 0;
+  title = 'Testing Demo Application';
 }

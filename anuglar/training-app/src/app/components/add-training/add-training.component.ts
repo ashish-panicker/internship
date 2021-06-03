@@ -13,7 +13,8 @@ export class AddTrainingComponent implements OnInit {
     description: new FormControl('', [Validators.required, Validators.minLength(10)]),
     email: new FormControl('', [Validators.required, Validators.email]),
     startDate: new FormControl('', [Validators.required]),
-    endDate: new FormControl('', [Validators.required])
+    endDate: new FormControl('', [Validators.required]),
+    registrationOpen: new FormControl(false, [Validators.required])
   });
 
   constructor() { }

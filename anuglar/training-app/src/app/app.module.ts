@@ -10,12 +10,16 @@ import { NavComponent } from './components/nav/nav.component';
 import { Routes, RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AddTrainingComponent } from './components/add-training/add-training.component';
+import { AddTrainerComponent } from './components/add-trainer/add-trainer.component';
+import { ListTrainersComponent } from './components/list-trainers/list-trainers.component';
+import { HttpClientModule } from '@angular/common/http';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'home', redirectTo: '', pathMatch: 'full' },
   { path: 'about', component: AboutComponent },
   { path: 'contact', component: ContactComponent },
+  { path: 'add-trainer', component: AddTrainerComponent },
   { path: 'add-training', component: AddTrainingComponent }
 ];
 
@@ -26,13 +30,16 @@ const appRoutes: Routes = [
     ContactComponent,
     AboutComponent,
     NavComponent,
-    AddTrainingComponent
+    AddTrainingComponent,
+    AddTrainerComponent,
+    ListTrainersComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
+    HttpClientModule,
     RouterModule.forRoot(appRoutes)
   ],
   providers: [],

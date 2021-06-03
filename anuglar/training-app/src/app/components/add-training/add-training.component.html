@@ -34,7 +34,8 @@
                 <input type="email" name="email" id="email" class="form-control" placeholder="Course POC email"
                     formControlName="email" 
                     [ngClass]="{
-                        'is-invalid': trainingForm.controls['email'].invalid && (trainingForm.controls['email'].dirty || trainingForm.controls['email'].touched),'is-valid': trainingForm.controls['email'].valid
+                        'is-invalid': trainingForm.controls['email'].invalid && (trainingForm.controls['email'].dirty || trainingForm.controls['email'].touched),
+                        'is-valid': trainingForm.controls['email'].valid
                     }">
                 <div class="invalid-feedback"
                     *ngIf="trainingForm.controls['email'].invalid && (trainingForm.controls['email'].dirty || trainingForm.controls['email'].touched)">
@@ -67,6 +68,14 @@
                     *ngIf="trainingForm.controls['endDate'].invalid && (trainingForm.controls['startDate'].dirty || trainingForm.controls['endDate'].touched)">
                     Make sure end date  is not empty.
                 </div>
+            </div>
+            <div class="form-check">
+              <label class="form-check-label">
+                <input type="checkbox" class="form-check-input" name="" id="registrationOpen" 
+                        formControlName="registrationOpen"
+                        value="checkedValue" >
+                Registration Open
+              </label>
             </div>
 
             <button type="submit" 

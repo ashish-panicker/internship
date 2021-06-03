@@ -1,0 +1,38 @@
+[
+    {
+        "id": 1,
+        "email": "arun.s",
+        "name": "Arun S",
+        "serviceLine": "CDE"
+    },
+    {
+        "id": 2,
+        "email": "rahul.p",
+        "name": "Rahul P",
+        "serviceLine": "ADM"
+    },
+    {
+        "id": 3,
+        "email": "sai.k.s",
+        "name": "Sai K S",
+        "serviceLine": "SD"
+    },
+    {
+        "id": 4,
+        "email": "amal.p",
+        "name": "Amal P",
+        "serviceLine": "CDE"
+    },
+    {
+        "id": 5,
+        "email": "amrita.r",
+        "name": "Amrita R",
+        "serviceLine": "CDE"
+    },
+    {
+        "id": 6,
+        "email": "sriyas",
+        "name": "Sriya S",
+        "serviceLine": "CDE"
+    }
+]
