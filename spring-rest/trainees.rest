@@ -1,5 +1,5 @@
 
-GET http://localhost:9999/trainees/4 HTTP/1.1
+GET http://localhost:9999/trainees/5 HTTP/1.1
 ###
 
 GET http://localhost:9999/trainees/ HTTP/1.1
@@ -9,10 +9,20 @@ POST http://localhost:9999/trainees/ HTTP/1.1
 Content-Type: application/json
 
 {
-    "id": "5",
-    "email": "amrita.r",
-    "name": "Amrita R",
-    "serviceLine": "CDE"
+    "id":"958125",
+    "email": "ahishek.r@cts.com",
+    "name": "Abhishek R",
+    "serviceLine": "ADM"
+}
+###
+
+POST http://localhost:9999/trainees/ HTTP/1.1
+Content-Type: application/json
+
+{
+    "email": "ahishek.r",
+    "name": "Abhishek R",
+    "serviceLine": ""
 }
 ###
 DELETE http://localhost:9999/trainees/5 HTTP/1.1

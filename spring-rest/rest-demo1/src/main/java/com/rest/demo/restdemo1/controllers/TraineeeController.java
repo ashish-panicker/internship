@@ -1,10 +1,16 @@
 package com.rest.demo.restdemo1.controllers;
 
+import java.net.URI;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.rest.demo.restdemo1.model.Trainee;
+import javax.validation.Valid;
 
+import com.rest.demo.restdemo1.controllers.payloads.request.TraineeRequest;
+import com.rest.demo.restdemo1.model.Trainee;
+import com.rest.demo.restdemo1.service.TraineeService;
+
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -12,47 +18,43 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
+// import org.springframework.web.util.UriComponentsBuilder;
 
 @RestController
 public class TraineeeController {
-    
-    
-    private static List<Trainee> trainees;
 
-    static{
-        trainees = new ArrayList<>();
-        trainees.add(new Trainee(1, "arun.s", "Arun S", "CDE"));
-        trainees.add(new Trainee(2, "rahul.p", "Rahul P", "ADM"));
-        trainees.add(new Trainee(3, "sai.k.s", "Sai K S", "SD"));
-        trainees.add(new Trainee(4, "amal.p", "Amal P", "CDE"));
+    private TraineeService traineeService;
+
+    public TraineeeController(TraineeService traineeService){
+        this.traineeService = traineeService;
     }
 
     @GetMapping("/trainees")
-    public List<Trainee> getAllTrainees(){
-        return this.trainees;
+    public List<Trainee> getAllTrainees() {
+        return this.traineeService.findAll();
     }
 
     @GetMapping("/trainees/{id}")
-    public Trainee getOneTrainee(@PathVariable Integer id){
-        return trainees.stream().filter(t -> t.getId().equals(id)).findAny().orElseThrow();
+    public Trainee getOneTrainee(@PathVariable Long id) {
+        return traineeService.findOne(id);
     }
 
     @PostMapping("/trainees")
-    public Trainee postTrainee(@RequestBody Trainee trainee){
-        trainees.add(trainee);
-        return trainee;
+    public Trainee postTrainee(@RequestBody @Valid TraineeRequest trainee) {
+        //  UriComponentsBuilder ucb
+        // URI localtionUri =
+        // ucb.path("/trainees/").path(String.valueOf(trainee.getId())).build().toUri();
+        return this.traineeService.createTrainee(trainee);
     }
 
     @PutMapping("/trainees/{id}")
-    public Trainee putTrainee(@PathVariable Integer id, @RequestBody Trainee trainee){
-        var toBeUpdated = trainees.stream().filter(t -> t.getId().equals(id)).findAny().orElseThrow();
-        trainees.set(trainees.indexOf(toBeUpdated), trainee);
-        return trainee;
+    public Trainee putTrainee(@PathVariable Long id, @RequestBody TraineeRequest trainee) {
+        return this.traineeService.updateTrainee(id, trainee);
     }
 
     @DeleteMapping("/trainees/{id}")
-    public Boolean deleteTrainee(@PathVariable Integer id){
-        var toBeDeleted = trainees.stream().filter(t -> t.getId().equals(id)).findAny().orElseThrow();
-        return trainees.remove(toBeDeleted);
+    public Boolean deleteTrainee(@PathVariable Long id) {
+        traineeService.deleTrainee(id);
+        return true;
     }
 }

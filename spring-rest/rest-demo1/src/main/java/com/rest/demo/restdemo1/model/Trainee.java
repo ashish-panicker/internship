@@ -1,55 +1,35 @@
 package com.rest.demo.restdemo1.model;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotBlank;
+
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
+
+@Entity
+@Table(name = "trainees")
+@ToString
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
 public class Trainee {
 
-    private Integer id;
+    @Id
+    private Long id;
 
     private String email;
 
     private String name;
 
     private String serviceLine;
-
-    public Trainee() {
-    }
-
-    public Trainee(Integer id, String email, String name, String serviceLine) {
-        this.id = id;
-        this.email = email;
-        this.name = name;
-        this.serviceLine = serviceLine;
-    }
-
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getServiceLine() {
-        return serviceLine;
-    }
-
-    public void setServiceLine(String serviceLine) {
-        this.serviceLine = serviceLine;
-    }
 
 }
